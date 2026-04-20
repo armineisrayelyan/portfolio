@@ -1,17 +1,16 @@
 import './style.css';
 
-import { RobotOutlined, ThunderboltOutlined } from '@ant-design/icons';
+import { SettingOutlined, SyncOutlined } from '@ant-design/icons';
 import { Col, Row } from 'antd';
 
 import heroImg from '../../assets/hero.png';
 import { FeatureItem } from '../FeatureItem';
-import { GlassCard } from '../GlassCard';
 import { Pill } from '../Pill';
 import { VIRTUAL_SELF } from './consts';
 
 export function VirtualSelfSection() {
   return (
-    <GlassCard>
+    <div className="VirtualSelfSectionWrap">
       <Row gutter={[22, 22]} align="middle" className="VirtualSelfSection">
         <Col xs={24} lg={12}>
           <div className="VirtualSelfImage">
@@ -30,19 +29,19 @@ export function VirtualSelfSection() {
 
           <div className="VirtualSelfList">
             <FeatureItem
-              icon={<ThunderboltOutlined />}
+              icon={<SettingOutlined />}
               title={VIRTUAL_SELF.features[0].title}
               description={VIRTUAL_SELF.features[0].description}
             />
             <FeatureItem
-              icon={<RobotOutlined />}
+              icon={<SyncOutlined />}
               title={VIRTUAL_SELF.features[1].title}
               description={VIRTUAL_SELF.features[1].description}
             />
           </div>
         </Col>
       </Row>
-    </GlassCard>
+    </div>
   );
 }
 

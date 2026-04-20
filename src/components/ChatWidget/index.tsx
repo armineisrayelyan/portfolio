@@ -1,6 +1,6 @@
 import './style.css';
 
-import { SendOutlined } from '@ant-design/icons';
+import { RobotOutlined, SendOutlined } from '@ant-design/icons';
 import { Col, Input, Row } from 'antd';
 import { useMemo, useState } from 'react';
 
@@ -15,11 +15,11 @@ export function ChatWidget() {
 
   return (
     <GlassCard>
-      <Row gutter={[18, 18]} align="stretch" className="ChatWidget">
-        <Col xs={24} lg={11}>
+      <Row gutter={[24, 24]} align="middle" className="ChatWidget">
+        {/* ── Left: info + chips ── */}
+        <Col xs={24} lg={12}>
           <h3 className="ChatWidgetTitle">{CHAT_WIDGET.title}</h3>
           <p className="ChatWidgetDesc">{CHAT_WIDGET.description}</p>
-          <div className="ChatWidgetSpacer" />
           <div className="ChatWidgetActions">
             {suggestions.map((s) => (
               <button
@@ -28,15 +28,24 @@ export function ChatWidget() {
                 type="button"
                 onClick={() => onSuggestion(s)}
               >
-                {s}
+                "{s}"
               </button>
             ))}
           </div>
         </Col>
 
-        <Col xs={24} lg={13}>
+        {/* ── Right: chat panel ── */}
+        <Col xs={24} lg={12}>
           <div className="ChatWidgetPanel">
-            <div className="ChatWidgetBubble">{CHAT_WIDGET.greeting}</div>
+            {/* bot greeting message */}
+            <div className="ChatWidgetMessageRow">
+              <span className="ChatWidgetBotIcon" aria-hidden="true">
+                <RobotOutlined />
+              </span>
+              <div className="ChatWidgetBubble">{CHAT_WIDGET.greeting}</div>
+            </div>
+
+            {/* input + send */}
             <div className="ChatWidgetInputRow">
               <Input
                 className="ChatWidgetInput"
@@ -44,6 +53,7 @@ export function ChatWidget() {
                 onChange={(e) => setValue(e.target.value)}
                 placeholder={CHAT_WIDGET.placeholder}
                 size="large"
+                variant="borderless"
               />
               <button className="ChatWidgetSend" type="button" aria-label="Send message">
                 <SendOutlined />
@@ -55,4 +65,3 @@ export function ChatWidget() {
     </GlassCard>
   );
 }
-

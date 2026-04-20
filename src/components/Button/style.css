@@ -11,3 +11,19 @@
   transform: translateY(-1px);
 }
 
+/* "View Projects" primary — blue-to-purple gradient */
+.AppButton.ant-btn-primary {
+  background: linear-gradient(135deg, #a5c8ff 0%, #c8a5ff 100%);
+  border: none;
+  color: #0d0f1e;
+  font-weight: 600;
+  box-shadow: 0 4px 18px rgba(160, 100, 255, 0.28);
+}
+
+.AppButton.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #b8d4ff 0%, #d4b8ff 100%) !important;
+  color: #0d0f1e !important;
+  border: none !important;
+  box-shadow: 0 6px 24px rgba(160, 100, 255, 0.38) !important;
+}
+

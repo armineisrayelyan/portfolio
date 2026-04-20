@@ -3,14 +3,16 @@
 }
 
 .HeroSectionTitle {
-  font-size: 64px;
+  font-size: 96px;
   letter-spacing: -0.03em;
   line-height: 1.02;
   margin: 10px 0 10px;
   font-weight: 900;
+  color: var(--text);
 }
 
 .HeroSectionDescription {
+  font-size: 20px;
   color: var(--muted);
   line-height: 1.7;
   margin: 0;
@@ -29,7 +31,7 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--surface-subtle);
   box-shadow: var(--shadow);
   min-height: 320px;
 }
@@ -59,4 +61,3 @@
     font-size: 44px;
   }
 }
-

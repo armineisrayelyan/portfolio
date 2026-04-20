@@ -2,21 +2,21 @@
   width: 100%;
 }
 
+/* ── Left column ── */
 .ChatWidgetTitle {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  margin: 0;
+  margin: 0 0 12px;
+  color: var(--text);
 }
 
 .ChatWidgetDesc {
   color: var(--muted);
-  line-height: 1.6;
-  margin: 0;
-}
-
-.ChatWidgetSpacer {
-  height: 12px;
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0 0 20px;
+  max-width: 380px;
 }
 
 .ChatWidgetActions {
@@ -27,61 +27,109 @@
 
 .ChatWidgetChip {
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--muted);
-  padding: 8px 12px;
+  border: 1px solid var(--chip-border);
+  background: var(--surface-subtle);
+  color: var(--chip-text);
+  padding: 7px 14px;
   font-size: 12px;
   cursor: pointer;
   user-select: none;
+  transition: background 150ms ease, transform 150ms ease;
 }
 
 .ChatWidgetChip:hover {
+  background: var(--surface-hover);
   transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.06);
 }
 
+/* ── Right column: panel ── */
 .ChatWidgetPanel {
   border-radius: 18px;
   border: 1px solid var(--border);
-  background: rgba(0, 0, 0, 0.14);
-  padding: 14px;
+  background: var(--card2);
+  padding: 16px;
   display: flex;
   flex-direction: column;
+  gap: 24px;
+}
+
+/* bot message row: avatar + bubble */
+.ChatWidgetMessageRow {
+  display: flex;
+  align-items: flex-start;
   gap: 12px;
 }
 
-.ChatWidgetBubble {
+/* purple circle avatar for the bot */
+.ChatWidgetBotIcon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
   border-radius: 999px;
-  padding: 10px 12px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--muted);
-  font-size: 12px;
+  background: rgba(120, 60, 220, 0.2);
+  border: 1px solid rgba(160, 100, 255, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(160, 100, 255, 0.95);
+  font-size: 16px;
 }
 
+/* message text bubble */
+.ChatWidgetBubble {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 14px;
+  color: var(--bubble-text);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* ── Input row ── */
 .ChatWidgetInputRow {
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
 }
 
+.ChatWidgetInput.ant-input-affix-wrapper,
 .ChatWidgetInput {
   flex: 1 1 auto;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--input-text);
+  font-size: 14px;
+  padding-left: 0;
 }
 
+.ChatWidgetInput::placeholder,
+.ChatWidgetInput .ant-input::placeholder {
+  color: var(--input-placeholder);
+}
+
+/* purple gradient send button */
 .ChatWidgetSend {
-  width: 40px;
-  height: 40px;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
   border-radius: 999px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #a050ff 0%, #d060ff 100%);
+  border: none;
+  color: #fff;
+  font-size: 15px;
   cursor: pointer;
+  transition: opacity 150ms ease, transform 150ms ease;
+  box-shadow: 0 4px 14px rgba(160, 60, 255, 0.35);
 }
 
 .ChatWidgetSend:hover {
+  opacity: 0.88;
   transform: translateY(-1px);
 }
-

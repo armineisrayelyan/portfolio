@@ -1,12 +1,12 @@
 import './style.css';
 
-import { MenuOutlined } from '@ant-design/icons';
+import { GlobalOutlined, MailOutlined, MenuOutlined, CodeOutlined } from '@ant-design/icons';
 import { Button as AntdButton, Drawer, Grid, Layout, Menu, Space, Typography } from 'antd';
 import { PropsWithChildren, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { ThemeToggle } from '../../components/ThemeToggle';
-import { BRAND_NAME, MAIN_LAYOUT_CONSTS, NAV_ITEMS } from './consts';
+import { BRAND_NAME, FOOTER_LINKS, FOOTER_ROLE, MAIN_LAYOUT_CONSTS, NAV_CTA, NAV_ITEMS } from './consts';
 
 const { Header, Content, Footer } = Layout;
 
@@ -44,6 +44,8 @@ export function MainLayout({ children }: PropsWithChildren) {
   return (
     <Layout className="MainLayout">
       <Header className="MainLayoutHeader">
+        <span className="MainLayoutHeaderBorder" aria-hidden="true" />
+
         <Space size={12} align="center" className="MainLayoutHeaderLeft">
           {!isDesktop && (
             <AntdButton
@@ -59,18 +61,34 @@ export function MainLayout({ children }: PropsWithChildren) {
         </Space>
 
         {isDesktop ? (
-          <Space size={16} align="center" className="MainLayoutMenu">
+          <Space size={0} align="center" className="MainLayoutMenu">
             <Menu
               mode="horizontal"
+              disabledOverflow
               selectedKeys={selectedKey ? [selectedKey] : []}
               items={menuItems}
               onClick={(e) => onNavClick(String(e.key))}
               className="MainLayoutMenuInner"
             />
+            <AntdButton
+              className="MainLayoutCtaBtn"
+              onClick={() => navigate(NAV_CTA.path)}
+            >
+              {NAV_CTA.label}
+            </AntdButton>
+            <span className="MainLayoutDivider" aria-hidden="true" />
             <ThemeToggle />
           </Space>
         ) : (
-          <ThemeToggle />
+          <Space size={8}>
+            <AntdButton
+              className="MainLayoutCtaBtn"
+              onClick={() => navigate(NAV_CTA.path)}
+            >
+              {NAV_CTA.label}
+            </AntdButton>
+            <ThemeToggle />
+          </Space>
         )}
       </Header>
 
@@ -94,9 +112,27 @@ export function MainLayout({ children }: PropsWithChildren) {
       </Content>
 
       <Footer className="MainLayoutFooter">
-        <Typography.Text type="secondary" className="MainLayoutFooterText">
-          © {new Date().getFullYear()} {BRAND_NAME} · Built with React, TypeScript, Vite, Ant Design
-        </Typography.Text>
+        <div className="MainLayoutFooterInner">
+          <Typography.Text className="MainLayoutFooterText">
+            © {new Date().getFullYear()} {BRAND_NAME} · {FOOTER_ROLE}
+          </Typography.Text>
+          <div className="MainLayoutFooterIcons">
+            {FOOTER_LINKS.map((link) => (
+              <a
+                key={link.key}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={link.ariaLabel}
+                className="MainLayoutFooterIconBtn"
+              >
+                {link.key === 'website' && <GlobalOutlined />}
+                {link.key === 'terminal' && <CodeOutlined />}
+                {link.key === 'email' && <MailOutlined />}
+              </a>
+            ))}
+          </div>
+        </div>
       </Footer>
     </Layout>
   );

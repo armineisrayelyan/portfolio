@@ -2,6 +2,7 @@
   min-height: 100vh;
 }
 
+/* ── Header ── */
 .MainLayoutHeader {
   position: sticky;
   top: 0;
@@ -9,13 +10,116 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 18px;
+  padding-inline: 24px;
   height: 64px;
-  background: rgba(3, 10, 25, 0.55);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: saturate(180%) blur(14px);
+  background: rgba(3, 10, 25, 0.72);
+  backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #00d4ff 0%, #7b2fff 100%) 1;
 }
 
+:root[data-theme='light'] .MainLayoutHeader {
+  background: rgba(240, 244, 255, 0.82);
+}
+
+.MainLayoutHeaderBorder {
+  display: none;
+}
+
+/* ── Brand ── */
+.MainLayoutBrand {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+/* ── Nav menu wrapper ── */
+.MainLayoutMenu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Ant Design horizontal menu ── */
+.MainLayoutMenuInner.ant-menu {
+  background: transparent;
+  border-bottom: none !important;
+  line-height: 64px;
+}
+
+.MainLayoutMenuInner .ant-menu-item {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  padding-inline: 14px;
+  margin-inline: 0;
+  border-radius: 0;
+  border-bottom: none !important;
+  transition: color 150ms ease;
+}
+
+.MainLayoutMenuInner .ant-menu-item:hover {
+  color: var(--text);
+  background: transparent !important;
+}
+
+.MainLayoutMenuInner .ant-menu-item-selected {
+  color: #64ffda !important;
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+:root[data-theme='light'] .MainLayoutMenuInner .ant-menu-item-selected {
+  color: #0d9f80 !important;
+}
+
+.MainLayoutMenuInner .ant-menu-item-selected > .ant-menu-title-content {
+  border-bottom: 2px solid #64ffda;
+  padding-bottom: 4px;
+}
+
+:root[data-theme='light'] .MainLayoutMenuInner .ant-menu-item-selected > .ant-menu-title-content {
+  border-bottom-color: #0d9f80;
+}
+
+.MainLayoutMenuInner .ant-menu-item::after {
+  display: none !important;
+}
+
+/* ── Contact pill button ── */
+.MainLayoutCtaBtn.ant-btn {
+  height: 34px;
+  padding-inline: 20px;
+  border-radius: 999px;
+  background: rgba(107, 48, 196, 0.25);
+  border: 1px solid rgba(140, 80, 240, 0.55);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  margin-left: 10px;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.MainLayoutCtaBtn.ant-btn:hover {
+  background: rgba(107, 48, 196, 0.45) !important;
+  border-color: rgba(160, 100, 255, 0.8) !important;
+  color: var(--text) !important;
+}
+
+/* ── Divider ── */
+.MainLayoutDivider {
+  display: inline-block;
+  width: 1px;
+  height: 18px;
+  background: var(--border);
+  margin-inline: 12px;
+  vertical-align: middle;
+}
+
+/* ── Content ── */
 .MainLayoutContent {
   padding-inline: 16px;
   padding-block: 24px;
@@ -27,41 +131,50 @@
   width: 100%;
 }
 
+/* ── Footer ── */
 .MainLayoutFooter {
-  text-align: center;
   background: transparent;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--border);
+  padding-block: 0;
 }
 
-.MainLayoutBrand {
-  color: var(--text);
-  letter-spacing: 0.2px;
+.MainLayoutFooterInner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.MainLayoutMenu {
-  min-width: 420px;
-  justify-content: flex-end;
+.MainLayoutFooterText {
+  color: var(--muted);
+  font-size: 13px;
 }
 
-.MainLayoutMenuInner {
-  border-bottom: none;
-  min-width: 420px;
-  justify-content: flex-end;
+.MainLayoutFooterIcons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.MainLayoutMenuInner.ant-menu {
-  background: transparent;
-}
-
-.MainLayoutMenuInner .ant-menu-item {
-  color: rgba(255, 255, 255, 0.7);
+.MainLayoutFooterIconBtn {
+  width: 34px;
+  height: 34px;
   border-radius: 999px;
-  margin-inline: 2px;
+  border: 1px solid var(--border);
+  background: var(--surface-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 15px;
+  text-decoration: none;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
 }
 
-.MainLayoutMenuInner .ant-menu-item-selected {
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.95);
+.MainLayoutFooterIconBtn:hover {
+  background: var(--surface-hover);
+  color: var(--text);
 }
-
-
