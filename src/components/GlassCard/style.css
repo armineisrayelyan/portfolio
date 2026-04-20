@@ -1,0 +1,23 @@
+.GlassCard {
+  border-radius: var(--radius-xl);
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px) saturate(160%);
+}
+
+.GlassCardSubtle {
+  background: var(--card2);
+  box-shadow: none;
+}
+
+.GlassCardInner {
+  padding: 24px;
+}
+
+@media (max-width: 768px) {
+  .GlassCardInner {
+    padding: 18px;
+  }
+}
+

@@ -1,0 +1,87 @@
+.ChatWidget {
+  width: 100%;
+}
+
+.ChatWidgetTitle {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.ChatWidgetDesc {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ChatWidgetSpacer {
+  height: 12px;
+}
+
+.ChatWidgetActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ChatWidgetChip {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  padding: 8px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ChatWidgetChip:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.ChatWidgetPanel {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.14);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ChatWidgetBubble {
+  border-radius: 999px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.ChatWidgetInputRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ChatWidgetInput {
+  flex: 1 1 auto;
+}
+
+.ChatWidgetSend {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+}
+
+.ChatWidgetSend:hover {
+  transform: translateY(-1px);
+}
+

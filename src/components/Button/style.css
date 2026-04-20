@@ -1,0 +1,13 @@
+.AppButton {
+  border-radius: 999px;
+  padding-inline: 18px;
+}
+
+.AppButton.is-ghost {
+  backdrop-filter: saturate(180%) blur(10px);
+}
+
+.AppButton:hover {
+  transform: translateY(-1px);
+}
+

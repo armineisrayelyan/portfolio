@@ -1,0 +1,9 @@
+.HomePage {
+  padding-block: 18px 30px;
+}
+
+.HomePageStack {
+  display: grid;
+  gap: 160px;
+}
+

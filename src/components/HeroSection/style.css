@@ -1,0 +1,62 @@
+.HeroSection {
+  padding-top: 18px;
+}
+
+.HeroSectionTitle {
+  font-size: 64px;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  margin: 10px 0 10px;
+  font-weight: 900;
+}
+
+.HeroSectionDescription {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 520px;
+}
+
+.HeroSectionActions {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.HeroSectionArt {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: var(--shadow);
+  min-height: 320px;
+}
+
+.HeroSectionArt img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.95;
+}
+
+.HeroSectionMetricTopRight {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.HeroSectionMetricBottomLeft {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+}
+
+@media (max-width: 900px) {
+  .HeroSectionTitle {
+    font-size: 44px;
+  }
+}
+

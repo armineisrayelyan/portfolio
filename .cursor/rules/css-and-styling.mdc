@@ -1,0 +1,15 @@
+---
+description: CSS and styling rules (no inline styles, PascalCase classes, avoid globals)
+alwaysApply: false
+---
+# CSS and Styling
+
+- **No inline styles** (`style={{ ... }}`) in components.
+- Each component must use its colocated `style.css`.
+- CSS class names must be **PascalCase** and meaningful (BEM-like is OK if still PascalCase):
+  - Example: `HeroSectionTitle`, `MainLayoutHeader`, `ChatWidgetPanel`
+- Avoid global CSS conflicts:
+  - Do not style generic tags globally for component-specific UI.
+  - If global tokens are needed, define only CSS variables in `src/utils/global.css`.
+- Prefer **Ant Design** components for layout where practical (`Row`, `Col`, `Space`, `Layout`, `Grid`).
+

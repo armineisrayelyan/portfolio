@@ -1,0 +1,67 @@
+.MainLayout {
+  min-height: 100vh;
+}
+
+.MainLayoutHeader {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 18px;
+  height: 64px;
+  background: rgba(3, 10, 25, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: saturate(180%) blur(14px);
+}
+
+.MainLayoutContent {
+  padding-inline: 16px;
+  padding-block: 24px;
+}
+
+.MainLayoutContainer {
+  margin: 0 auto;
+  max-width: 1080px;
+  width: 100%;
+}
+
+.MainLayoutFooter {
+  text-align: center;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.MainLayoutBrand {
+  color: var(--text);
+  letter-spacing: 0.2px;
+}
+
+.MainLayoutMenu {
+  min-width: 420px;
+  justify-content: flex-end;
+}
+
+.MainLayoutMenuInner {
+  border-bottom: none;
+  min-width: 420px;
+  justify-content: flex-end;
+}
+
+.MainLayoutMenuInner.ant-menu {
+  background: transparent;
+}
+
+.MainLayoutMenuInner .ant-menu-item {
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  margin-inline: 2px;
+}
+
+.MainLayoutMenuInner .ant-menu-item-selected {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+

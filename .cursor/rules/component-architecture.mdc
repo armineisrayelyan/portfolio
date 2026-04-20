@@ -1,0 +1,16 @@
+---
+description: Component architecture and file structure (folder-per-component)
+alwaysApply: true
+---
+
+# Component Architecture
+
+- Every React component/page/layout must live in its **own folder** named after the component (PascalCase).
+- Each folder must contain exactly:
+  - `index.tsx` (main component)
+  - `style.css` (component styles)
+  - `consts.ts` (constants/config/mock data for that component)
+- Do not place multiple components in the same folder.
+- Prefer small, reusable components.
+- No hardcoded UI strings inside components when they can live in `consts.ts`.
+

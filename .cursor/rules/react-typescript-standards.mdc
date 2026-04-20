@@ -1,0 +1,19 @@
+---
+description: React + TypeScript standards (strict typing, naming, no any)
+globs: **/*.{ts,tsx}
+alwaysApply: false
+---
+
+# React + TypeScript Standards
+
+- Use **strict TypeScript**:
+  - No `any`
+  - Always define interfaces/types for props, API data, and complex objects
+  - Prefer `unknown` over `any` for untyped values
+- Naming:
+  - Components: **PascalCase**
+  - Variables/functions: **camelCase**
+  - Files/folders: follow project structure (components/pages/layout in PascalCase folders)
+- Prefer functional components and hooks.
+- Keep components focused; extract reusable logic into hooks.
+

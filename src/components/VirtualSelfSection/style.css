@@ -1,0 +1,66 @@
+.VirtualSelfSection {
+  width: 100%;
+}
+
+.VirtualSelfImage {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: var(--shadow);
+  position: relative;
+  min-height: 360px;
+}
+
+.VirtualSelfImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.95) contrast(1.05);
+  opacity: 0.9;
+}
+
+.VirtualSelfCaption {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.26);
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.VirtualSelfDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(153, 255, 153, 0.95);
+  box-shadow: 0 0 0 4px rgba(153, 255, 153, 0.15);
+}
+
+.VirtualSelfTitle {
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 10px 0 10px;
+}
+
+.VirtualSelfDesc {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.VirtualSelfList {
+  display: grid;
+  gap: 12px;
+}
+
