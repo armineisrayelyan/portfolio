@@ -11,4 +11,5 @@ export const CHAT_WIDGET = {
   copyLabel: 'Copy',
   copiedLabel: 'Copied!',
   savedHeading: 'Saved responses',
+  deleteLabel: 'Delete',
 } as const;

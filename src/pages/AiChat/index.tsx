@@ -1,10 +1,12 @@
 import './style.css';
 
-import { CheckOutlined, CopyOutlined, RobotOutlined } from '@ant-design/icons';
+import { CheckOutlined, CopyOutlined, SaveOutlined, RobotOutlined } from '@ant-design/icons';
 import { Alert, Button, Skeleton, Space, Tooltip, Typography } from 'antd';
 import { useState } from 'react';
 
 import { useGemini } from '../../hooks/useGemini';
+import type { SavedResponse } from '../../types/savedResponse';
+import { addSavedResponse } from '../../utils/savedResponsesStorage';
 import { AI_CHAT } from './consts';
 
 const { Title, Text } = Typography;
@@ -35,6 +37,7 @@ function CopyButton({ text }: { text: string }) {
 export function AiChat() {
   const [prompt, setPrompt] = useState('');
   const { status, response, error, ask, reset } = useGemini();
+  const [saved, setSaved] = useState(false);
 
   const isLoading = status === 'loading';
   const hasApiKey = Boolean(import.meta.env['VITE_GEMINI_API_KEY']);
@@ -48,6 +51,19 @@ export function AiChat() {
   const handleReset = () => {
     setPrompt('');
     reset();
+    setSaved(false);
+  };
+
+  const handleSave = () => {
+    if (!response) return;
+    const trimmedPrompt = prompt.trim();
+    const item: SavedResponse = {
+      id: `${Date.now()}`,
+      response,
+    };
+    addSavedResponse(item);
+    setSaved(true);
+    setTimeout(() => setSaved(false), 2000);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -146,6 +162,16 @@ export function AiChat() {
               Gemini
             </Text>
             <span className="AiChatResponseLabelSpacer" />
+            <Tooltip title={saved ? AI_CHAT.savedLabel : AI_CHAT.saveLabel}>
+              <button
+                type="button"
+                className={`AiChatCopyBtn${saved ? ' is-copied' : ''}`}
+                onClick={handleSave}
+                aria-label={saved ? AI_CHAT.savedLabel : AI_CHAT.saveLabel}
+              >
+                {saved ? <CheckOutlined /> : <SaveOutlined />}
+              </button>
+            </Tooltip>
             <CopyButton text={response} />
           </div>
           <p className="AiChatResponseText">{response}</p>

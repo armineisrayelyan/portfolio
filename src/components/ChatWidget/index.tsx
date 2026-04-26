@@ -1,12 +1,13 @@
 import './style.css';
 
-import { CheckOutlined, CopyOutlined, RobotOutlined, SendOutlined } from '@ant-design/icons';
+import { CheckOutlined, CopyOutlined, DeleteOutlined, RobotOutlined, SendOutlined } from '@ant-design/icons';
 import { Col, Input, Row, Tooltip, Typography } from 'antd';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { SAVED_RESPONSES } from '../../data/savedResponses';
 import { useGemini } from '../../hooks/useGemini';
+import type { SavedResponse } from '../../types/savedResponse';
+import { loadSavedResponses, removeSavedResponse } from '../../utils/savedResponsesStorage';
 import { GlassCard } from '../GlassCard';
 import { CHAT_WIDGET } from './consts';
 
@@ -39,8 +40,13 @@ export function ChatWidget() {
   const [value, setValue] = useState('');
   const suggestions = useMemo(() => CHAT_WIDGET.suggestions, []);
   const { status, response, ask } = useGemini();
+  const [saved, setSaved] = useState<SavedResponse[]>([]);
 
   const isLoading = status === 'loading';
+
+  useEffect(() => {
+    setSaved(loadSavedResponses());
+  }, []);
 
   const handleSend = async () => {
     const trimmed = value.trim();
@@ -124,14 +130,22 @@ export function ChatWidget() {
             </div>
 
             {/* saved responses */}
-            {SAVED_RESPONSES.length > 0 && (
+            {saved.length > 0 && (
               <div className="ChatWidgetSaved">
                 <Text className="ChatWidgetSavedHeading">
                   {CHAT_WIDGET.savedHeading}
                 </Text>
-                {SAVED_RESPONSES.map((item) => (
+                {saved.map((item) => (
                   <div key={item.id} className="ChatWidgetSavedItem">
                     <div className="ChatWidgetSavedItemHeader">
+                      <button
+                        type="button"
+                        className="ChatWidgetDeleteBtn"
+                        aria-label={CHAT_WIDGET.deleteLabel}
+                        onClick={() => setSaved(removeSavedResponse(item.id))}
+                      >
+                        <DeleteOutlined />
+                      </button>
                       <CopyButton text={item.response} />
                     </div>
                     <div className="ChatWidgetMarkdown ChatWidgetMarkdown--saved">

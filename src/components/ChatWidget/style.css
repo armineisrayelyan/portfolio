@@ -177,6 +177,29 @@
   background: rgba(77, 250, 138, 0.08);
 }
 
+/* delete button (trash) */
+.ChatWidgetDeleteBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-subtle);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+  flex-shrink: 0;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.ChatWidgetDeleteBtn:hover {
+  background: rgba(255, 77, 79, 0.10);
+  border-color: rgba(255, 77, 79, 0.25);
+  color: rgba(255, 77, 79, 0.95);
+}
+
 /* ── Saved responses inside panel ── */
 .ChatWidgetSaved {
   border-top: 1px solid var(--border);

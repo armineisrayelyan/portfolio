@@ -16,6 +16,6 @@ export const AI_CHAT = {
     'Add your Gemini API key to the .env file: VITE_GEMINI_API_KEY=your_key_here',
   copyLabel: 'Copy',
   copiedLabel: 'Copied!',
-  savedHeading: 'Saved Responses',
-  savedEmpty: 'No saved responses yet. Paste entries into src/data/savedResponses.ts.',
+  saveLabel: 'Save',
+  savedLabel: 'Saved!',
 } as const;
