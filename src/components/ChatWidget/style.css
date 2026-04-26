@@ -60,6 +60,16 @@
   gap: 12px;
 }
 
+/* pulsing state while loading */
+@keyframes chatPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.ChatWidgetBotIcon.is-loading {
+  animation: chatPulse 1.2s ease-in-out infinite;
+}
+
 /* purple circle avatar for the bot */
 .ChatWidgetBotIcon {
   flex-shrink: 0;
@@ -109,6 +119,100 @@
 .ChatWidgetInput::placeholder,
 .ChatWidgetInput .ant-input::placeholder {
   color: var(--input-placeholder);
+}
+
+/* ── Markdown inside bubble ── */
+.ChatWidgetMarkdown {
+  color: var(--bubble-text);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.ChatWidgetMarkdown p { margin: 0 0 6px; }
+.ChatWidgetMarkdown p:last-child { margin: 0; }
+.ChatWidgetMarkdown ul, .ChatWidgetMarkdown ol { padding-left: 18px; margin: 4px 0 6px; }
+.ChatWidgetMarkdown li { margin-bottom: 2px; }
+.ChatWidgetMarkdown strong { font-weight: 700; }
+.ChatWidgetMarkdown code {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  background: var(--surface-hover);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+.ChatWidgetMarkdown pre {
+  background: var(--surface-subtle);
+  border-radius: 8px;
+  padding: 10px 12px;
+  overflow-x: auto;
+  margin: 6px 0;
+}
+.ChatWidgetMarkdown pre code { background: none; padding: 0; }
+
+/* ── Copy button ── */
+.ChatWidgetCopyBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-subtle);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+  flex-shrink: 0;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.ChatWidgetCopyBtn:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.ChatWidgetCopyBtn.is-copied {
+  border-color: rgba(77, 250, 138, 0.5);
+  color: #4dfa8a;
+  background: rgba(77, 250, 138, 0.08);
+}
+
+/* ── Saved responses inside panel ── */
+.ChatWidgetSaved {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ChatWidgetSavedHeading {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.ChatWidgetSavedItem {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface-subtle);
+  padding: 12px 14px;
+  animation: fadeInUp 200ms ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ChatWidgetSavedItemHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: end;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
 /* purple gradient send button */

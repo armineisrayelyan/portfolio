@@ -1,0 +1,230 @@
+.AiChat {
+  padding-block: 10px 40px;
+}
+
+/* ── Header ── */
+.AiChatHeader {
+  margin-bottom: 24px;
+}
+
+/* ── Suggestions ── */
+.AiChatSuggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.AiChatSuggestionChip {
+  border-radius: 999px;
+  border: 1px solid var(--chip-border);
+  background: var(--surface-subtle);
+  color: var(--chip-text);
+  padding: 6px 14px;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.AiChatSuggestionChip:hover {
+  background: var(--surface-hover);
+  transform: translateY(-1px);
+}
+
+/* ── Input card ── */
+.AiChatInputCard {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
+  backdrop-filter: blur(14px) saturate(160%);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.AiChatTextarea {
+  width: 100%;
+  resize: vertical;
+}
+
+.AiChatInputActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* ── Response card ── */
+.AiChatResponseCard {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
+  backdrop-filter: blur(14px) saturate(160%);
+  padding: 20px 24px;
+  animation: fadeInUp 220ms ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.AiChatResponseLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.AiChatResponseLabelSpacer {
+  flex: 1;
+}
+
+.AiChatResponseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #a050ff, #d060ff);
+  box-shadow: 0 0 0 3px rgba(160, 80, 255, 0.2);
+}
+
+/* ── Copy button ── */
+.AiChatCopyBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-subtle);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.AiChatCopyBtn:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.AiChatCopyBtn.is-copied {
+  border-color: rgba(77, 250, 138, 0.5);
+  color: #4dfa8a;
+  background: rgba(77, 250, 138, 0.08);
+}
+
+/* ── Plain text response (preserve newlines) ── */
+.AiChatResponseText {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 0;
+  white-space: pre-wrap; /* keep Gemini newlines/spacing */
+  word-break: break-word;
+}
+
+/* ── Markdown output (unused on /ai now, kept for future) ── */
+.AiChatMarkdown {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.AiChatMarkdown p { margin: 0 0 10px; }
+.AiChatMarkdown p:last-child { margin-bottom: 0; }
+.AiChatMarkdown h1,.AiChatMarkdown h2,.AiChatMarkdown h3 { margin: 16px 0 6px; font-weight: 700; }
+.AiChatMarkdown ul,.AiChatMarkdown ol { padding-left: 20px; margin: 6px 0 10px; }
+.AiChatMarkdown li { margin-bottom: 4px; }
+.AiChatMarkdown strong { font-weight: 700; }
+.AiChatMarkdown em { font-style: italic; }
+.AiChatMarkdown code {
+  font-family: ui-monospace, 'Cascadia Code', monospace;
+  font-size: 13px;
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1px 6px;
+}
+.AiChatMarkdown pre {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  overflow-x: auto;
+  margin: 10px 0;
+}
+.AiChatMarkdown pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+}
+.AiChatMarkdown blockquote {
+  border-left: 3px solid rgba(160, 100, 255, 0.5);
+  padding-left: 12px;
+  color: var(--muted);
+  margin: 8px 0;
+}
+
+.AiChatMarkdown--saved {
+  font-size: 14px;
+}
+
+/* ── Saved responses ── */
+.AiChatSaved {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.AiChatSavedItem {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
+  backdrop-filter: blur(14px) saturate(160%);
+  padding: 16px 20px;
+  animation: fadeInUp 220ms ease both;
+}
+
+.AiChatSavedItemHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.AiChatSavedPrompt {
+  font-size: 14px;
+}
+
+/* ── Loading skeleton ── */
+.AiChatSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+/* ── Error ── */
+.AiChatError {
+  margin-top: 0;
+}
+
+/* ── API key hint ── */
+.AiChatApiKeyHint {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(160, 100, 255, 0.35);
+  background: rgba(120, 60, 220, 0.08);
+  color: var(--muted);
+  font-size: 12px;
+  font-family: ui-monospace, 'Cascadia Code', monospace;
+}

@@ -7,6 +7,7 @@ import { ThemeProvider } from './components/ThemeProvider';
 import { useThemeMode } from './hooks/useThemeMode';
 import { MainLayout } from './layout/MainLayout';
 import { About } from './pages/About';
+import { AiChat } from './pages/AiChat';
 import { Contact } from './pages/Contact';
 import { Home } from './pages/Home';
 import { Projects } from './pages/Projects';
@@ -47,6 +48,7 @@ export function App() {
               <Route path="/about" element={<About />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/ai" element={<AiChat />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </MainLayout>
