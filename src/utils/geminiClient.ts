@@ -1,42 +1,24 @@
-import axios from 'axios';
-
-const GEMINI_MODEL = 'gemini-2.5-flash';
-const BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
-
-export type GeminiPart = { text: string };
-export type GeminiContent = { parts: GeminiPart[]; role?: string };
-
-export type GeminiRequest = {
-  contents: GeminiContent[];
-};
-
-export type GeminiResponse = {
-  candidates: Array<{
-    content: GeminiContent;
-    finishReason: string;
-  }>;
-};
-
 export async function callGemini(prompt: string): Promise<string> {
-  const apiKey = import.meta.env['VITE_GEMINI_API_KEY'] as string;
-
-  if (!apiKey) {
-    throw new Error('VITE_GEMINI_API_KEY is not set in your .env file.');
-  }
-
-  const url = `${BASE_URL}/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
-
-  const body: GeminiRequest = {
-    contents: [{ parts: [{ text: prompt }] }],
-  };
-
-  const { data } = await axios.post<GeminiResponse>(url, body, {
+  const res = await fetch('/api/gemini', {
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ prompt }),
   });
 
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+  const contentType = res.headers.get('content-type') ?? '';
+  if (!contentType.includes('application/json')) {
+    throw new Error(`Unexpected response from server (HTTP ${res.status}). Is the dev server running?`);
+  }
 
-  if (!text) throw new Error('No response from Gemini.');
+  const data = (await res.json()) as { text?: string; error?: string };
 
-  return text;
+  if (!res.ok) {
+    throw new Error(data.error ?? `Request failed (${res.status})`);
+  }
+
+  if (!data.text) {
+    throw new Error('No response from Gemini.');
+  }
+
+  return data.text;
 }

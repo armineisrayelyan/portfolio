@@ -40,7 +40,6 @@ export function AiChat() {
   const [saved, setSaved] = useState(false);
 
   const isLoading = status === 'loading';
-  const hasApiKey = Boolean(import.meta.env['VITE_GEMINI_API_KEY']);
 
   const handleSubmit = async () => {
     const trimmed = prompt.trim();
@@ -112,9 +111,6 @@ export function AiChat() {
           placeholder={AI_CHAT.placeholder}
           disabled={isLoading}
         />
-        {!hasApiKey && (
-          <div className="AiChatApiKeyHint">{AI_CHAT.apiKeyWarning}</div>
-        )}
         <div className="AiChatInputActions">
           {status !== 'idle' && (
             <Button onClick={handleReset} disabled={isLoading}>
