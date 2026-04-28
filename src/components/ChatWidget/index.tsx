@@ -51,7 +51,7 @@ export function ChatWidget() {
   const handleSend = async () => {
     const trimmed = value.trim();
     if (!trimmed || isLoading) return;
-    // await ask(trimmed);
+    await ask(trimmed);
     setValue('');
   };
 
