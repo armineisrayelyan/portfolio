@@ -40,6 +40,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     );
 
     const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    console.log(text);
 
     if (!text) {
       return res.status(502).json({ error: 'No response from Gemini.' });
