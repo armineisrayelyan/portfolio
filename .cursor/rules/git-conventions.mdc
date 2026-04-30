@@ -1,3 +1,13 @@
 ---
+description: Git safety rules for this project
 alwaysApply: true
 ---
+
+# Git Conventions
+
+## Never commit these files
+- `.env` — contains API keys, must stay local only
+- `dist/` — build output, regenerated on every deploy
+- `node_modules/` — dependencies, never committed
+
+Verify with `git status` before any commit.
