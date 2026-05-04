@@ -18,10 +18,17 @@ Deployment is triggered automaticcaly when `main` is pushed to GitHub.
 
 ```bash
 git fetch origin main
+git log main..origin/main --oneline
 git diff main origin/main
+# (WAIT FOR USER APPROVAL)
 git merge origin/main
-pnpm build                  # confirm zero errors
+
+pnpm build
+
+git status
+git diff
+# (WAIT FOR USER APPROVAL)
 git add .
 git commit -m "Your message"
-git push origin main        # triggers Vercel auto-deploy
+git push origin main
 ```
