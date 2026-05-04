@@ -23,6 +23,7 @@ export function useGemini(): GeminiState {
     setError(null);
     try {
       const text = await callGemini(prompt);
+      console.log(text);
       setResponse(text);
       setStatus('success');
     } catch (err) {

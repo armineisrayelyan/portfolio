@@ -1,0 +1,10 @@
+---
+description: Remove unused files and imports when refactoring
+alwaysApply: true
+---
+
+# Cleanup
+
+- When removing a component, hook, util, or route, delete its folder/files from the repo — do not leave orphans.
+- Remove unused imports and dead code in the same change when practical.
+- After refactors, avoid committing files that are no longer imported or referenced.

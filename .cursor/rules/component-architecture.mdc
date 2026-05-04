@@ -5,12 +5,13 @@ alwaysApply: true
 
 # Component Architecture
 
-- Every React component/page/layout must live in its **own folder** named after the component (PascalCase).
-- Each folder must contain exactly:
-  - `index.tsx` (main component)
-  - `style.css` (component styles)
-  - `consts.ts` (constants/config/mock data for that component)
-- Do not place multiple components in the same folder.
+- Every React component, page, or layout must live in its **own folder** named after the component (PascalCase).
+- For a **typical** component (UI + styles + local config/copy), the folder should include:
+  - `index.tsx` — main component
+  - `style.css` — component styles
+  - `consts.ts` — constants, copy, and mock data for that component
+- If a file would be **empty or unused** (e.g. no custom CSS yet), you may **omit** `style.css` or `consts.ts` until they are needed — add them when you introduce styles or extracted constants.
+- Do not place multiple unrelated components in the same folder.
 - Prefer small, reusable components.
 - No hardcoded UI strings inside components when they can live in `consts.ts`.
 
