@@ -1,5 +1,5 @@
 export const ABOUT = {
-  rolePill: 'testing',
+  rolePill: 'Software Engineer',
   heading: ['Building', 'performance', 'at scale.'],
   description:
     'I am a software engineer focused on building scalable, high-performance web applications. I enjoy collaborating in cross-functional teams, taking ownership of my work and continuously learning new technologies to improve both product quality and developer experience.',
