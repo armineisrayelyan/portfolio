@@ -27,9 +27,13 @@ export function HeroSection() {
               <Button type="primary" size="large" onClick={() => navigate(HERO.ctas.primary.to)}>
                 {HERO.ctas.primary.label}
               </Button>
-              <Button size="large" href={HERO.ctas.secondary.href} target="_blank" rel="noreferrer">
-                {HERO.ctas.secondary.label}
-              </Button>
+              <a
+              className="ant-btn ant-btn-primary ant-btn-lg AppButton"
+              href={HERO.ctas.resume.href}
+              download
+            >
+              {HERO.ctas.resume.label}
+            </a>
             </div>
           </Col>
 

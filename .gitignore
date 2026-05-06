@@ -6,3 +6,5 @@ dist
 .pnpm
 *.tsbuildinfo
 .env
+.cache/
+.cursor/debug-*.log

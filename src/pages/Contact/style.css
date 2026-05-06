@@ -1,18 +1,36 @@
-.ContactCard {
-  border-radius: 16px;
+.ContactPage {
+  padding-bottom: 64px;
 }
 
-.ContactHeader {
-  width: 100%;
-  margin-bottom: 12px;
+.ContactHero {
+  padding: 56px 0 40px;
 }
 
-.ContactTitle {
+.ContactHeroHeading {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.ContactHeroLine1 {
+  display: block;
+}
+
+.ContactHeroAccent {
+  display: block;
+  background: linear-gradient(90deg, #ac7aff 0%, #c084fc 60%, #e879f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ContactHeroSubheading {
+  font-size: 20px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 52ch;
   margin: 0;
 }
-
-.ContactSocial {
-  width: 100%;
-  margin-top: 14px;
-}
-

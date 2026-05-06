@@ -1,0 +1,76 @@
+.AboutSideStack {
+  display: grid;
+  gap: 36px;
+  margin-top: 18px;
+}
+
+.AboutSideBlock {
+  display: grid;
+  gap: 0;
+}
+
+.AboutSideEyebrow {
+  color: rgba(172, 122, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.AboutSideTitle {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+/* ── Education items ── */
+
+.AboutEduList {
+  display: grid;
+  gap: 12px;
+}
+
+.AboutEduItem {
+  padding-left: 12px;
+  border-left: 2px solid rgba(172, 122, 255, 0.35);
+}
+
+.AboutEduDegree {
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.AboutEduPeriod {
+  margin-top: 4px;
+  color: rgba(172, 122, 255, 0.85);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.AboutEduSchool {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* ── Language tags ── */
+
+.AboutLangs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.AboutLangTag {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--chip-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}

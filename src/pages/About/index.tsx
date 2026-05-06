@@ -1,42 +1,28 @@
 import './style.css';
 
-import { Card, Col, Row, Space, Tag, Typography } from 'antd';
+import { Col, Row } from 'antd';
 
-import { ABOUT } from './consts';
+import { AboutEducationLanguagesSection } from '../../components/AboutEducationLanguagesSection';
+import { AboutEcosystemSection } from '../../components/AboutEcosystemSection';
+import { AboutExperienceSection } from '../../components/AboutExperienceSection';
+import { AboutHeroSection } from '../../components/AboutHeroSection';
 
 export function About() {
   return (
     <div className="AboutPage">
-      <Row gutter={[16, 16]}>
-        <Col xs={24} md={14}>
-          <Card className="AboutCard">
-            <Space direction="vertical" size={12} className="AboutStack">
-              <Typography.Title level={3} className="AboutTitle">
-                {ABOUT.heading}
-              </Typography.Title>
-              <Typography.Paragraph className="AboutBio">
-                {ABOUT.bio}
-              </Typography.Paragraph>
-            </Space>
-          </Card>
+      <AboutHeroSection />
+
+      <Row gutter={[18, 18]} className="AboutGrid" align="top">
+        <Col xs={24} lg={24}>
+          <AboutExperienceSection />
         </Col>
-        <Col xs={24} md={10}>
-          <Card title={ABOUT.sections.skills} className="AboutCard">
-            <Space size={[8, 8]} wrap>
-              {ABOUT.skills.map((s) => (
-                <Tag key={s}>{s}</Tag>
-              ))}
-            </Space>
-          </Card>
+      </Row>
+      <Row gutter={[18, 18]} className="AboutGrid" align="top">
+        <Col xs={24} lg={16}>
+          <AboutEcosystemSection />
         </Col>
-        <Col xs={24}>
-          <Card title={ABOUT.sections.highlights} className="AboutCard">
-            <Space direction="vertical" size={10} className="AboutStack">
-              {ABOUT.experienceHighlights.map((h) => (
-                <Typography.Text key={h}>• {h}</Typography.Text>
-              ))}
-            </Space>
-          </Card>
+        <Col xs={24} lg={8}>
+          <AboutEducationLanguagesSection />
         </Col>
       </Row>
     </div>

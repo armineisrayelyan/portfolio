@@ -1,0 +1,71 @@
+.AiToolCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 22px 20px 18px;
+  height: 100%;
+}
+
+.AiToolCardIcon {
+  font-size: 22px;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.AiToolCardIcon--cv-writer    { color: #ac7aff; }
+.AiToolCardIcon--chatbot      { color: #4fd1ff; }
+.AiToolCardIcon--cover-letter { color: #4fd1c5; }
+
+.AiToolCardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.AiToolCardDesc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.AiToolCardBtn {
+  margin-top: auto;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease;
+  width: 100%;
+}
+
+.AiToolCardBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.AiToolCardBtn:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+/* Light mode */
+:root[data-theme='light'] .AiToolCard {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+:root[data-theme='light'] .AiToolCardBtn {
+  border-color: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.04);
+}

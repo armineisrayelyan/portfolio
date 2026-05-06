@@ -1,0 +1,116 @@
+.AboutExperienceSection {
+  margin-top: 18px;
+}
+
+.AboutSectionHeader {
+  margin: 2px 0 14px;
+}
+
+.AboutSectionEyebrow {
+  color: rgba(172, 122, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.AboutSectionTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.AboutSectionTitle {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.AboutSectionSubtitle {
+  color: var(--muted);
+  font-size: 12px;
+  max-width: 42ch;
+  text-align: right;
+}
+
+.AboutExperienceCard {
+  width: 100%;
+}
+
+.AboutExperienceCardHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.AboutExperienceCardRole {
+  color: rgba(172, 122, 255, 0.9);
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.AboutExperienceCardCompany {
+  margin-top: 4px;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.AboutExperienceCardMeta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.AboutExperienceCardPeriod {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.AboutExperienceCardTag {
+  display: inline-flex;
+  align-self: flex-end;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--chip-border);
+  background: var(--surface-subtle);
+  color: var(--chip-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.AboutExperienceCardBullets {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+.AboutExperienceCardBullets li {
+  margin: 6px 0;
+}
+
+@media (max-width: 768px) {
+  .AboutSectionTitleRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .AboutSectionSubtitle {
+    text-align: left;
+  }
+
+  .AboutExperienceCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .AboutExperienceCardMeta {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+

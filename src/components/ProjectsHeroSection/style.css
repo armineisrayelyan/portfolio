@@ -1,0 +1,65 @@
+.ProjectsHeroSection {
+  padding: 56px 0 40px;
+}
+
+.ProjectsHeroHeading {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.ProjectsHeroLine1 {
+  display: block;
+}
+
+.ProjectsHeroAccent {
+  display: block;
+  background: linear-gradient(90deg, #ac7aff 0%, #c084fc 60%, #e879f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ProjectsHeroSubheading {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 52ch;
+  line-height: 1.65;
+  margin: 0 0 32px;
+}
+
+.ProjectsHeroFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ProjectsFilterChip {
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--chip-border);
+  background: var(--surface-subtle);
+  color: var(--chip-text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.ProjectsFilterChip:hover {
+  background: var(--surface-hover);
+  border-color: rgba(172, 122, 255, 0.4);
+  color: var(--text);
+}
+
+.ProjectsFilterChip.is-active {
+  background: rgba(172, 122, 255, 0.22);
+  border-color: rgba(172, 122, 255, 0.6);
+  color: rgba(172, 122, 255, 1);
+}

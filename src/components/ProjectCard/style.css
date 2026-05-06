@@ -1,26 +1,128 @@
 .ProjectCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 24px 24px 20px;
   height: 100%;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
-.ProjectCard .ant-card {
-  height: 100%;
+.ProjectCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }
 
-.ProjectCardCard {
-  height: 100%;
-  border-radius: 16px;
+.ProjectCardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
-.ProjectCardCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+.ProjectCardTag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
 
-.ProjectCardLinks a {
-  font-weight: 600;
+.ProjectCardTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  flex: 1;
+  line-height: 1.35;
 }
 
-.ProjectCardDescription {
-  margin-top: 0;
+.ProjectCardDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 4px 0;
 }
 
+.ProjectCardActions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ProjectCardGithubBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.ProjectCardGithubBtn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+}
+
+.ProjectCardProjectBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  color: #0a0a0a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: background 160ms ease, opacity 160ms ease;
+}
+
+.ProjectCardProjectBtn:hover {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.88);
+  color: #0a0a0a;
+}
+
+/* Light mode */
+:root[data-theme='light'] .ProjectCard {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+:root[data-theme='light'] .ProjectCardTag {
+  border-color: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+:root[data-theme='light'] .ProjectCardGithubBtn {
+  border-color: rgba(0, 0, 0, 0.14);
+  color: var(--muted);
+}
+
+:root[data-theme='light'] .ProjectCardProjectBtn {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+}
+
+:root[data-theme='light'] .ProjectCardProjectBtn:hover {
+  background: #333;
+  border-color: #333;
+  color: #fff;
+}

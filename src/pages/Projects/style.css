@@ -1,12 +1,18 @@
-.ProjectsHeader {
-  margin-bottom: 14px;
+.ProjectsPage {
+  padding-bottom: 64px;
 }
 
-.ProjectsHeaderStack {
-  width: 100%;
+.ProjectsFeaturedRow {
+  margin-bottom: 4px;
 }
 
-.ProjectsTitle {
-  margin: 0;
+.ProjectsGridRow {
+  margin-top: 24px;
 }
 
+.ProjectsEmpty {
+  text-align: center;
+  color: var(--muted);
+  padding: 48px 0;
+  font-size: 15px;
+}

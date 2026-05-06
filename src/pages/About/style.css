@@ -1,21 +1,8 @@
 .AboutPage {
-  padding-block: 10px;
+  padding-block: 36px;
 }
 
-.AboutCard {
-  border-radius: 16px;
-}
-
-.AboutStack {
-  width: 100%;
-}
-
-.AboutTitle {
-  margin-top: 0;
-}
-
-.AboutBio {
-  margin-bottom: 0;
-  font-size: 16px;
+.AboutGrid {
+  margin-top: 64px;
 }
 
