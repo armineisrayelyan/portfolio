@@ -30,11 +30,6 @@ export function AboutHeroSection() {
               className="ant-btn ant-btn-primary ant-btn-lg AppButton"
               href={ABOUT_HERO.ctas.resume.href}
               download
-              // #region agent log
-              onClick={(e) => {
-                fetch('http://127.0.0.1:7486/ingest/be23e291-df61-4d50-aa81-48ef06265107',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6c017e'},body:JSON.stringify({sessionId:'6c017e',runId:'pre-fix',hypothesisId:'H2',location:'AboutHeroSection/index.tsx:resumeClick',message:'Resume link clicked (AboutHeroSection)',data:{href:(e.currentTarget as HTMLAnchorElement).getAttribute('href'),hasDownload:(e.currentTarget as HTMLAnchorElement).hasAttribute('download'),tag:(e.currentTarget as HTMLAnchorElement).tagName},timestamp:Date.now()})}).catch(()=>{});
-              }}
-              // #endregion
             >
               <DownloadOutlined />
               {ABOUT_HERO.ctas.resume.label}
