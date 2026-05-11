@@ -3,25 +3,36 @@
   color-scheme: dark;
   --bg0:     #050b1a;
   --bg1:     #06132a;
-  --card:    rgba(255, 255, 255, 0.05);
-  --card2:   rgba(255, 255, 255, 0.035);
-  --border:  rgba(255, 255, 255, 0.09);
-  --text:    rgba(255, 255, 255, 0.92);
-  --muted:   rgba(255, 255, 255, 0.54);
+  --card:    rgba(255, 255, 255, 0.06);
+  --card2:   rgba(255, 255, 255, 0.04);
+  --border:  rgba(255, 255, 255, 0.1);
+  --text:    rgba(255, 255, 255, 0.94);
+  --muted:   rgba(255, 255, 255, 0.66);
   --shadow:  0 18px 45px rgba(0, 0, 0, 0.35);
   --radius-xl: 26px;
   --radius-lg: 18px;
   --radius-md: 14px;
 
+  /* Accent — matches navbar active (#64ffda) */
+  --accent: #64ffda;
+  --accent-strong: #34d399;
+  --accent-deep: #22c55e;
+  --accent-rgb: 100, 255, 218;
+  --accent-soft: rgba(100, 255, 218, 0.14);
+  --accent-border: rgba(100, 255, 218, 0.42);
+  --accent-glow: rgba(100, 255, 218, 0.22);
+  --accent-text: rgba(180, 255, 240, 0.95);
+  --heading-gradient: linear-gradient(90deg, #7ee8d8 0%, #64ffda 45%, #34d399 100%);
+
   /* semantic surface colours for inline rgba overrides */
-  --surface-subtle:  rgba(255, 255, 255, 0.04);
-  --surface-hover:   rgba(255, 255, 255, 0.08);
-  --chip-border:     rgba(255, 255, 255, 0.14);
-  --chip-text:       rgba(255, 255, 255, 0.65);
-  --input-text:      rgba(255, 255, 255, 0.70);
-  --input-placeholder: rgba(255, 255, 255, 0.28);
-  --bubble-text:     rgba(255, 255, 255, 0.82);
-  --caption-text:    rgba(255, 255, 255, 0.60);
+  --surface-subtle:  rgba(255, 255, 255, 0.05);
+  --surface-hover:   rgba(255, 255, 255, 0.1);
+  --chip-border:     rgba(255, 255, 255, 0.16);
+  --chip-text:       rgba(255, 255, 255, 0.74);
+  --input-text:      rgba(255, 255, 255, 0.78);
+  --input-placeholder: rgba(255, 255, 255, 0.34);
+  --bubble-text:     rgba(255, 255, 255, 0.88);
+  --caption-text:    rgba(255, 255, 255, 0.68);
 }
 
 /* ── Light ── */
@@ -29,21 +40,31 @@
   color-scheme: light;
   --bg0:     #eef1f8;
   --bg1:     #e4e9f5;
-  --card:    rgba(255, 255, 255, 0.72);
-  --card2:   rgba(255, 255, 255, 0.50);
-  --border:  rgba(0, 0, 0, 0.10);
-  --text:    rgba(0, 0, 0, 0.88);
-  --muted:   rgba(0, 0, 0, 0.52);
-  --shadow:  0 18px 45px rgba(0, 0, 0, 0.10);
+  --card:    rgba(255, 255, 255, 0.78);
+  --card2:   rgba(255, 255, 255, 0.56);
+  --border:  rgba(0, 0, 0, 0.1);
+  --text:    rgba(0, 0, 0, 0.9);
+  --muted:   rgba(0, 0, 0, 0.58);
+  --shadow:  0 18px 45px rgba(0, 0, 0, 0.1);
+
+  --accent: #0d9f80;
+  --accent-strong: #059669;
+  --accent-deep: #047857;
+  --accent-rgb: 13, 159, 128;
+  --accent-soft: rgba(13, 159, 128, 0.12);
+  --accent-border: rgba(13, 159, 128, 0.38);
+  --accent-glow: rgba(13, 159, 128, 0.18);
+  --accent-text: rgba(5, 100, 82, 0.95);
+  --heading-gradient: linear-gradient(90deg, #0d9f80 0%, #14b8a6 50%, #0d9488 100%);
 
   --surface-subtle:  rgba(0, 0, 0, 0.04);
-  --surface-hover:   rgba(0, 0, 0, 0.07);
+  --surface-hover:   rgba(0, 0, 0, 0.08);
   --chip-border:     rgba(0, 0, 0, 0.14);
-  --chip-text:       rgba(0, 0, 0, 0.62);
-  --input-text:      rgba(0, 0, 0, 0.72);
-  --input-placeholder: rgba(0, 0, 0, 0.36);
-  --bubble-text:     rgba(0, 0, 0, 0.78);
-  --caption-text:    rgba(0, 0, 0, 0.55);
+  --chip-text:       rgba(0, 0, 0, 0.66);
+  --input-text:      rgba(0, 0, 0, 0.76);
+  --input-placeholder: rgba(0, 0, 0, 0.38);
+  --bubble-text:     rgba(0, 0, 0, 0.82);
+  --caption-text:    rgba(0, 0, 0, 0.6);
 }
 
 html,
@@ -54,8 +75,8 @@ body {
 body {
   margin: 0;
   background:
-    radial-gradient(900px circle at 15% -10%, rgba(0, 208, 255, 0.22), transparent 45%),
-    radial-gradient(900px circle at 85%  10%, rgba(120, 70, 255, 0.22), transparent 42%),
+    radial-gradient(900px circle at 15% -10%, rgba(0, 208, 255, 0.2), transparent 45%),
+    radial-gradient(900px circle at 85% 10%, rgba(52, 211, 153, 0.18), transparent 42%),
     linear-gradient(180deg, var(--bg1), var(--bg0));
   color: var(--text);
   min-height: 100vh;

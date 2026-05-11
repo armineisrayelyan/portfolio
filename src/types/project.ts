@@ -1,4 +1,4 @@
-export type ProjectCategory = 'all' | 'architecture' | 'full-stack' | 'mobile-systems' | 'ui-ux';
+export type ProjectCategory = 'all' | 'architecture' | 'full-stack' | 'mobile-systems' | 'frontend';
 
 export type Project = {
   title: string;
@@ -9,5 +9,5 @@ export type Project = {
   demoUrl?: string;
   featured?: boolean;
   coverImage?: string;
-  coverVariant?: 'blue' | 'purple';
+  coverVariant?: 'blue' | 'teal';
 };

@@ -4,24 +4,24 @@
   gap: 8px;
   padding: 7px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(160, 100, 255, 0.45);
-  background: rgba(120, 60, 220, 0.1);
-  color: rgba(170, 120, 255, 0.95);
+  border: 1px solid var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent-text);
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 :root[data-theme='light'] .Pill {
-  border-color: rgba(120, 60, 220, 0.4);
-  background: rgba(120, 60, 220, 0.08);
-  color: rgba(100, 40, 200, 0.9);
+  border-color: var(--accent-border);
+  background: rgba(var(--accent-rgb), 0.1);
+  color: var(--accent-text);
 }
 
 .PillDot {
   width: 6px;
   height: 6px;
   border-radius: 999px;
-  background: rgba(160, 100, 255, 0.95);
-  box-shadow: 0 0 0 4px rgba(160, 100, 255, 0.18);
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
 }

@@ -4,7 +4,7 @@
   align-items: flex-start;
 }
 
-/* purple circle icon */
+/* Accent circle icon */
 .FeatureItemIcon {
   width: 36px;
   height: 36px;
@@ -13,9 +13,9 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background: rgba(120, 60, 220, 0.2);
-  border: 1px solid rgba(160, 100, 255, 0.45);
-  color: rgba(190, 150, 255, 0.95);
+  background: rgba(var(--accent-rgb), 0.16);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-text);
   font-size: 16px;
 }
 

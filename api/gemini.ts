@@ -1,6 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import axios from 'axios';
 
+import { buildGeminiRequestBody } from './buildGeminiRequestBody';
+
 const GEMINI_MODEL = 'gemini-2.5-flash';
 const BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
 
@@ -35,12 +37,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const { data } = await axios.post<GeminiApiResponse>(
       url,
-      { contents: [{ parts: [{ text: prompt.trim() }] }] },
+      buildGeminiRequestBody(prompt),
       { headers: { 'Content-Type': 'application/json' } },
     );
 
     const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-    console.log(text);
 
     if (!text) {
       return res.status(502).json({ error: 'No response from Gemini.' });

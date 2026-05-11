@@ -1,60 +1,14 @@
 .AboutHeroSection {
-  margin-top: 6px;
+  padding-top: 18px;
 }
 
 .AboutHeroSectionRow {
   width: 100%;
 }
 
-.AboutHeroSectionTitle {
-  margin-top: 14px;
-  font-size: 54px;
-  line-height: 1.06;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
 .AboutHeroSectionAccent {
-  background: linear-gradient(90deg, rgba(172, 122, 255, 0.98), rgba(90, 210, 255, 0.95));
+  background: var(--heading-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-
-.AboutHeroSectionDescription {
-  margin: 14px 0 0;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.7;
-  max-width: 56ch;
-}
-
-.AboutHeroSectionActions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.AboutHeroSectionArt {
-  position: relative;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: var(--surface-subtle);
-  box-shadow: var(--shadow);
-  min-height: 320px;
-}
-
-.AboutHeroSectionArt img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  .AboutHeroSectionTitle {
-    font-size: 40px;
-  }
-}
-

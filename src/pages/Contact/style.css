@@ -21,7 +21,7 @@
 
 .ContactHeroAccent {
   display: block;
-  background: linear-gradient(90deg, #ac7aff 0%, #c084fc 60%, #e879f9 100%);
+  background: var(--heading-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

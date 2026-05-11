@@ -24,7 +24,7 @@ function AntdProvider({ children }: { children: ReactNode }) {
           fontFamily:
             'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"',
           borderRadius: 10,
-          colorPrimary: '#1677ff',
+          colorPrimary: '#14b8a6',
         },
       },
     } as const;

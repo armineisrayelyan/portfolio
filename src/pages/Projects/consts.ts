@@ -16,63 +16,78 @@ export type FilterChip = {
 };
 
 export const FILTER_CHIPS: readonly FilterChip[] = [
-  { key: 'all', label: 'All Architecture' },
-  { key: 'full-stack', label: 'Full-Stack' },
-  { key: 'mobile-systems', label: 'Mobile Systems' },
-  { key: 'ui-ux', label: 'UI/UX Craft' },
+  { key: 'all', label: 'All' },
+  { key: 'full-stack', label: 'Full-stack' },
+  { key: 'mobile-systems', label: 'Mobile' },
+  { key: 'frontend', label: 'Frontend' },
 ] as const;
 
 export const PROJECTS: readonly Project[] = [
   {
-    title: 'Full-stack App: Architectural Hub',
+    title: 'Full-stack CMS & authenticated web platform',
     description:
-      'A robust full-stack platform showcasing modern architectural patterns with server-side rendering, real-time data, and payment integration.',
-    techStack: ['NEXT.JS', 'STRIPE', 'POSTGRESQL'],
-    category: 'architecture',
-    githubUrl: '#',
-    demoUrl: '#',
+      'Freelance build: React and Next.js front end, Strapi headless CMS, PostgreSQL, authentication flows, API integration, and responsive UI with a maintainable architecture.',
+    techStack: ['REACT', 'EXPRESS', 'MONGO DB', 'SOCKET.IO'],
+    category: 'full-stack',
     featured: true,
     coverVariant: 'blue',
     coverImage: project1Img,
   },
   {
-    title: 'Mobile Experience Engine',
+    title: 'Mobile payment application',
     description:
-      'A cross-platform mobile framework optimised for silky 60 fps animations and native-feel interactions.',
-    techStack: ['REACT NATIVE'],
+      'Freelance mobile product with modern React-oriented workflows, authentication-aware flows, and polished UX alongside full-stack delivery.',
+    techStack: ['REACT NATIVE', 'TYPESCRIPT', 'EXPO'],
+    githubUrl: 'https://github.com/armineisrayelyan/payments-app',
     category: 'mobile-systems',
-    githubUrl: '#',
-    demoUrl: '#',
     featured: true,
-    coverVariant: 'purple',
+    coverVariant: 'teal',
     coverImage: projectMobileImg,
   },
   {
-    title: 'Kinetic UI Framework',
+    title: 'Call center desktop application with Twilio integration',
     description:
-      'A declarative animation toolkit built on GSAP, providing composable motion primitives with full TypeScript support.',
-    techStack: ['TYPESCRIPT', 'GSAP'],
-    category: 'ui-ux',
-    githubUrl: '#',
-    demoUrl: '#',
+      'Worked on a desktop application for customer support and sales agents that supported calling, conference calls, SMS messaging, and real-time communication workflows integrated with Twilio services.',
+    techStack: ['REACT', 'TYPESCRIPT', 'TWILIO', 'REST API', 'REDUX'],
+    category: 'frontend',
   },
   {
-    title: 'Serverless Edge Node',
-    description:
-      'Distributed edge-computing infrastructure on AWS Lambda@Edge for sub-50 ms global API responses.',
-    techStack: ['NODE.JS', 'AWS'],
-    category: 'full-stack',
-    githubUrl: '#',
-    demoUrl: '#',
+    title: 'Debt relief platform frontend development',
+  description:
+    'Worked on the frontend experience for Freedom Debt Relief, building responsive React interfaces, reusable UI components, and customer-facing flows for debt resolution services, dashboards, and financial guidance features.',
+  techStack: ['REACT', 'TYPESCRIPT', 'NEXT.JS', 'REDUX', 'REST API'],
+  category: 'frontend',
+  demoUrl: 'https://www.freedomdebtrelief.com/',
   },
   {
-    title: 'Enterprise Data Viz',
+    title: 'Frontend development for Freedom Financial Network',
     description:
-      'Executive-grade data visualisation dashboard rendering millions of data points via WebGL-backed D3 renderers.',
-    techStack: ['D3.JS', 'TAILWIND'],
-    category: 'architecture',
-    githubUrl: '#',
-    demoUrl: '#',
+      'Worked on frontend features and UI improvements for Freedom Financial Network platforms focused on debt solutions, financial wellness, and customer support experiences.',
+    techStack: ['REACT', 'NEXT.JS', 'TYPESCRIPT', 'SCSS'],
+    category: 'frontend',
+    demoUrl: 'https://www.freedomfinancialnetwork.com/',
+  },
+  // {
+  //   title: 'Legacy frontend migration to React',
+  //   description:
+  //     'Mamble-era work: migrated legacy frontends to React and Next.js with clearer structure, reusable components, and more predictable state and API handling.',
+  //   techStack: ['REACT', 'NEXT.JS', 'TYPESCRIPT'],
+  //   category: 'full-stack',
+  // },
+  {
+    title: 'Reusable UI systems & component libraries',
+    description:
+      'Shared React and TypeScript component systems with Redux and Context API, Tailwind, Bootstrap, and Material UI — less duplication and stable loading/error patterns around REST APIs.',
+    techStack: ['REACT', 'REDUX', 'MATERIAL UI'],
+    category: 'frontend',
+  },
+  {
+    title: 'Scribex',
+    description:
+      'Website',
+    techStack: ['REACT', 'NEXT.JS', 'TYPESCRIPT'],
+    category: 'frontend',
+    demoUrl: 'https://scribex.io/',
   },
 ] as const;
 
@@ -102,8 +117,8 @@ export const AI_TOOLS: readonly AiTool[] = [
 ] as const;
 
 export const PROJECTS_PAGE = {
-  heading: ['Engineered Digital', 'Experiences'],
+  heading: ['Selected', 'Work'],
   subheading:
-    'A curation of high-performance systems, intuitive interfaces, and scalable architectures built with technical precision and editorial flair.',
+    'Full-stack builds, React migrations, reusable UI systems, and mobile delivery — focused on maintainable architecture, integrations, and dependable user experiences.',
   aiToolsTitle: 'AI Tools',
 } as const;

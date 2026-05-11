@@ -24,9 +24,9 @@
   width: 28px;
   height: 28px;
   border-radius: 10px;
-  border: 1px solid rgba(172, 122, 255, 0.25);
-  background: rgba(172, 122, 255, 0.08);
-  color: rgba(190, 150, 255, 0.95);
+  border: 1px solid var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent-text);
   flex: 0 0 auto;
 }
 
@@ -72,6 +72,6 @@
 }
 
 .AboutEcoBullets li::marker {
-  color: rgba(172, 122, 255, 0.9);
+  color: var(--accent);
 }
 

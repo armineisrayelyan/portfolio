@@ -76,7 +76,7 @@ export function AiChat() {
       {/* ── Header ── */}
       <div className="AiChatHeader">
         <Space align="center" size={10}>
-          <RobotOutlined style={{ fontSize: 22, color: 'rgba(160,100,255,0.9)' }} />
+          <RobotOutlined className="AiChatHeaderIcon" />
           <Title level={3} style={{ margin: 0 }}>
             {AI_CHAT.heading}
           </Title>

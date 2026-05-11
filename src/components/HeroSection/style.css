@@ -26,38 +26,203 @@
   flex-wrap: wrap;
 }
 
+/* ── Hero art card (reference: overlapping circles + dots + portrait) ── */
 .HeroSectionArt {
   position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid var(--border);
-  background: var(--surface-subtle);
-  box-shadow: var(--shadow);
-  min-height: 320px;
+  min-height: 400px;
+  isolation: isolate;
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px rgba(var(--accent-rgb), 0.08);
+  background: linear-gradient(160deg, #f0fdf9 0%, #ecfeff 35%, #f8fafc 70%, #f1f5f9 100%);
 }
 
-.HeroSectionArt img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+:root[data-theme='dark'] .HeroSectionArt {
+  background: linear-gradient(160deg, #071815 0%, #0a1f1c 35%, #0c1220 70%, #0a1520 100%);
+}
+
+.HeroSectionArtDecor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Soft overlapping circles — mint / cyan / emerald (app accent family) */
+.HeroSectionArtCircle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(0.5px);
+}
+
+.HeroSectionArtCircle--1 {
+  width: min(320px, 92vw);
+  height: min(320px, 92vw);
+  left: -18%;
+  bottom: -12%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(100, 255, 218, 0.42) 0%,
+    rgba(52, 211, 153, 0.18) 45%,
+    transparent 68%
+  );
+}
+
+.HeroSectionArtCircle--2 {
+  width: min(260px, 80vw);
+  height: min(260px, 80vw);
+  left: 8%;
+  top: 8%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(125, 211, 252, 0.38) 0%,
+    rgba(45, 212, 191, 0.15) 50%,
+    transparent 70%
+  );
+}
+
+.HeroSectionArtCircle--3 {
+  width: min(240px, 75vw);
+  height: min(240px, 75vw);
+  right: -14%;
+  top: 4%;
+  background: radial-gradient(
+    circle at 45% 55%,
+    rgba(52, 211, 153, 0.36) 0%,
+    rgba(16, 185, 129, 0.12) 48%,
+    transparent 72%
+  );
+}
+
+/* Dot grids */
+.HeroSectionArtDotGrid {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 8px;
+  opacity: 0.55;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.12) 1.2px, transparent 1.2px);
+  background-size: 10px 10px;
+}
+
+:root[data-theme='dark'] .HeroSectionArtDotGrid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  opacity: 0.45;
+}
+
+.HeroSectionArtDotGrid--tr {
+  width: 72px;
+  height: 56px;
+  top: 16px;
+  right: 16px;
+}
+
+.HeroSectionArtDotGrid--bc {
+  width: 100px;
+  height: 36px;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.HeroSectionArtPhoto {
+  position: relative;
+  z-index: 2;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 8px 8px 0 0;
+}
+
+.HeroSectionArtPhoto img {
+  max-height: min(440px, 72vh);
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: right bottom;
   display: block;
-  opacity: 0.95;
+  filter: drop-shadow(0 12px 28px rgba(15, 23, 42, 0.12));
+}
+
+:root[data-theme='dark'] .HeroSectionArtPhoto img {
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.45));
+}
+
+/* Floating stat cards — light frosted panels + accent numbers */
+.HeroSectionArt .Metric {
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+  gap: 4px;
+}
+
+:root[data-theme='dark'] .HeroSectionArt .Metric {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(15, 23, 42, 0.82);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+}
+
+.HeroSectionArt .MetricValue {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+}
+
+:root[data-theme='light'] .HeroSectionArt .MetricValue {
+  color: #0d9488;
+}
+
+.HeroSectionArt .MetricLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .HeroSectionMetricTopRight {
   position: absolute;
   top: 14px;
   right: 14px;
+  z-index: 3;
 }
 
 .HeroSectionMetricBottomLeft {
   position: absolute;
   left: 14px;
   bottom: 14px;
+  z-index: 3;
 }
 
 @media (max-width: 900px) {
   .HeroSectionTitle {
     font-size: 44px;
+  }
+
+  .HeroSectionArt {
+    min-height: 340px;
+  }
+
+  .HeroSectionArtPhoto {
+    min-height: 340px;
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .HeroSectionArtPhoto img {
+    max-height: 360px;
+  }
+
+  .HeroSectionArtCircle--3 {
+    right: -22%;
   }
 }

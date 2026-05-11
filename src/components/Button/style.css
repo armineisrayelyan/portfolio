@@ -16,19 +16,19 @@
   transform: translateY(-1px);
 }
 
-/* "View Projects" primary — blue-to-purple gradient */
+/* Primary — cyan to mint (navbar accent family) */
 .AppButton.ant-btn-primary {
-  background: linear-gradient(135deg, #a5c8ff 0%, #c8a5ff 100%);
+  background: linear-gradient(135deg, #7dd3fc 0%, #64ffda 45%, #34d399 100%);
   border: none;
-  color: #0d0f1e;
+  color: #04121a;
   font-weight: 600;
-  box-shadow: 0 4px 18px rgba(160, 100, 255, 0.28);
+  box-shadow: 0 4px 20px rgba(var(--accent-rgb), 0.28);
 }
 
 .AppButton.ant-btn-primary:hover {
-  background: linear-gradient(135deg, #b8d4ff 0%, #d4b8ff 100%) !important;
-  color: #0d0f1e !important;
+  background: linear-gradient(135deg, #93e0fc 0%, #7affe8 40%, #4ade80 100%) !important;
+  color: #04121a !important;
   border: none !important;
-  box-shadow: 0 6px 24px rgba(160, 100, 255, 0.38) !important;
+  box-shadow: 0 8px 28px rgba(var(--accent-rgb), 0.35) !important;
 }
 

@@ -4,6 +4,8 @@ import type { IncomingMessage, ServerResponse } from 'http';
 import { defineConfig, loadEnv } from 'vite';
 import type { Plugin } from 'vite';
 
+import { buildGeminiRequestBody } from './api/buildGeminiRequestBody';
+
 const GEMINI_MODEL = 'gemini-2.5-flash';
 const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
 
@@ -55,7 +57,7 @@ function localGeminiApi(apiKey: string): Plugin {
                 const url = `${GEMINI_BASE_URL}/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
                 const { data } = await axios.post<GeminiApiResponse>(
                   url,
-                  { contents: [{ parts: [{ text: prompt.trim() }] }] },
+                  buildGeminiRequestBody(prompt),
                   { headers: { 'Content-Type': 'application/json' } },
                 );
 

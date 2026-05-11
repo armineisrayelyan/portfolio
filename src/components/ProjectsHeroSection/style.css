@@ -17,7 +17,7 @@
 
 .ProjectsHeroAccent {
   display: block;
-  background: linear-gradient(90deg, #ac7aff 0%, #c084fc 60%, #e879f9 100%);
+  background: var(--heading-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -54,12 +54,12 @@
 
 .ProjectsFilterChip:hover {
   background: var(--surface-hover);
-  border-color: rgba(172, 122, 255, 0.4);
+  border-color: var(--accent-border);
   color: var(--text);
 }
 
 .ProjectsFilterChip.is-active {
-  background: rgba(172, 122, 255, 0.22);
-  border-color: rgba(172, 122, 255, 0.6);
-  color: rgba(172, 122, 255, 1);
+  background: rgba(var(--accent-rgb), 0.18);
+  border-color: rgba(var(--accent-rgb), 0.55);
+  color: var(--accent);
 }

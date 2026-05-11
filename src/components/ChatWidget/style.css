@@ -70,18 +70,18 @@
   animation: chatPulse 1.2s ease-in-out infinite;
 }
 
-/* purple circle avatar for the bot */
+/* Bot avatar — accent ring */
 .ChatWidgetBotIcon {
   flex-shrink: 0;
   width: 34px;
   height: 34px;
   border-radius: 999px;
-  background: rgba(120, 60, 220, 0.2);
-  border: 1px solid rgba(160, 100, 255, 0.45);
+  background: rgba(var(--accent-rgb), 0.14);
+  border: 1px solid var(--accent-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(160, 100, 255, 0.95);
+  color: var(--accent);
   font-size: 16px;
 }
 
@@ -238,7 +238,7 @@
   margin-bottom: 8px;
 }
 
-/* purple gradient send button */
+/* Send — mint gradient */
 .ChatWidgetSend {
   flex-shrink: 0;
   width: 36px;
@@ -247,13 +247,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #a050ff 0%, #d060ff 100%);
+  background: linear-gradient(135deg, #14b8a6 0%, #34d399 55%, #64ffda 100%);
   border: none;
-  color: #fff;
+  color: #041a16;
   font-size: 15px;
   cursor: pointer;
   transition: opacity 150ms ease, transform 150ms ease;
-  box-shadow: 0 4px 14px rgba(160, 60, 255, 0.35);
+  box-shadow: 0 4px 16px rgba(var(--accent-rgb), 0.35);
 }
 
 .ChatWidgetSend:hover {
