@@ -14,11 +14,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  const token = process.env['TELEGRAM_BOT_TOKEN'];
-  const chatId = process.env['TELEGRAM_CHAT_ID'];
+  const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
+  const chatId = process.env.TELEGRAM_CHAT_ID?.trim();
 
   if (!token || !chatId) {
-    return res.status(500).json({ error: 'Server misconfiguration: Telegram credentials not set.' });
+    const missing = [
+      !token && 'TELEGRAM_BOT_TOKEN',
+      !chatId && 'TELEGRAM_CHAT_ID',
+    ].filter(Boolean);
+    return res.status(500).json({
+      error: `Server misconfiguration: set ${missing.join(' and ')} in Vercel → Settings → Environment Variables, then redeploy.`,
+    });
   }
 
   const body = req.body as TelegramRequestBody;

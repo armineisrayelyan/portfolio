@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import axios from 'axios';
 
-import { buildGeminiRequestBody } from './buildGeminiRequestBody';
+import { buildGeminiRequestBody } from './buildGeminiRequestBody.js';
 
 const GEMINI_MODEL = 'gemini-2.5-flash';
 const BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';

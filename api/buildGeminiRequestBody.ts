@@ -1,4 +1,4 @@
-import { ASSISTANT_KNOWLEDGE_BASE } from './assistantKnowledge';
+import { ASSISTANT_KNOWLEDGE_BASE } from './assistantKnowledge.js';
 
 /**
  * Body for `generateContent`. Shared by Vercel (`api/gemini.ts`) and the Vite
