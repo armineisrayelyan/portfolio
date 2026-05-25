@@ -40,6 +40,19 @@
   filter: grayscale(0.85) contrast(1.08) brightness(0.88);
 }
 
+.VirtualSelfImage.is-video::after {
+  display: none;
+}
+
+.VirtualSelfVideo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  background: #000;
+}
+
 /* "Virtual presence active" caption */
 .VirtualSelfCaption {
   position: absolute;
@@ -92,4 +105,73 @@
 .VirtualSelfList {
   display: grid;
   gap: 16px;
+}
+
+/* ── Ask my avatar ── */
+.VirtualSelfQa {
+  margin-top: 22px;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
+  backdrop-filter: blur(14px) saturate(160%);
+}
+
+.VirtualSelfQaHeading {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.VirtualSelfQaDesc {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.VirtualSelfQaInput {
+  margin-bottom: 10px;
+}
+
+.VirtualSelfQaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.VirtualSelfQaStatus {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.VirtualSelfQaAnswer {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface-subtle);
+}
+
+.VirtualSelfQaAnswerLabel {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.VirtualSelfQaAnswerText {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.VirtualSelfQaAlert {
+  margin-top: 12px;
 }

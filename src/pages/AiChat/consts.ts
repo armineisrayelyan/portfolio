@@ -13,7 +13,7 @@ export const AI_CHAT = {
   ],
   errorTitle: 'Something went wrong',
   apiKeyWarning:
-    'Add your Gemini API key to the .env file: VITE_GEMINI_API_KEY=your_key_here',
+    'Add your Gemini API key to the .env file: GEMINI_API_KEY=your_key_here',
   copyLabel: 'Copy',
   copiedLabel: 'Copied!',
   saveLabel: 'Save',

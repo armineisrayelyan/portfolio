@@ -4,10 +4,81 @@
   border-top: 1px solid var(--border);
 }
 
-.AiToolsSectionTitle {
+.AiToolsBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: rgba(20, 184, 166, 0.06);
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+}
+
+.AiToolsBannerLeft {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 1;
+  min-width: 0;
+}
+
+.AiToolsBannerIcon {
   font-size: 28px;
-  font-weight: 800;
+  color: #14b8a6;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.AiToolsBannerTitle {
+  font-size: 18px;
+  font-weight: 700;
   color: var(--text);
-  margin: 0 0 24px;
-  letter-spacing: -0.02em;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+
+.AiToolsBannerDesc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.AiToolsBannerBtn {
+  flex-shrink: 0;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: 1px solid #14b8a6;
+  background: transparent;
+  color: #14b8a6;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+  white-space: nowrap;
+}
+
+.AiToolsBannerBtn:hover:not(:disabled) {
+  background: #14b8a6;
+  color: #fff;
+}
+
+.AiToolsBannerBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .AiToolsBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 20px;
+  }
+
+  .AiToolsBannerBtn {
+    width: 100%;
+    text-align: center;
+  }
 }

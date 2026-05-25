@@ -1,21 +1,46 @@
 import './style.css';
 
-import { Col, Row } from 'antd';
+import { MessageOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 
-import { AiToolCard } from '../AiToolCard';
-import { AI_TOOLS, PROJECTS_PAGE } from './consts';
+import { AI_TOOLS } from './consts';
 
 export function AiToolsSection() {
+  const tool = AI_TOOLS[0];
+  const navigate = useNavigate();
+
+  if (!tool) return null;
+
+  function handleAction() {
+    if (!tool) return;
+    if (tool.actionHref?.startsWith('/')) {
+      navigate(tool.actionHref);
+    } else if (tool.actionHref) {
+      window.open(tool.actionHref, '_blank');
+    }
+  }
+
   return (
     <div className="AiToolsSection">
-      <h2 className="AiToolsSectionTitle">{PROJECTS_PAGE.aiToolsTitle}</h2>
-      <Row gutter={[16, 16]}>
-        {AI_TOOLS.map((tool) => (
-          <Col key={tool.id} xs={24} sm={12} md={8}>
-            <AiToolCard tool={tool} />
-          </Col>
-        ))}
-      </Row>
+      <div className="AiToolsBanner">
+        <div className="AiToolsBannerLeft">
+          <span className="AiToolsBannerIcon">
+            <MessageOutlined />
+          </span>
+          <div>
+            <h3 className="AiToolsBannerTitle">{tool.title}</h3>
+            <p className="AiToolsBannerDesc">{tool.description}</p>
+          </div>
+        </div>
+        <button
+          type="button"
+          className="AiToolsBannerBtn"
+          onClick={handleAction}
+          disabled={!tool.actionHref}
+        >
+          {tool.actionLabel}
+        </button>
+      </div>
     </div>
   );
 }

@@ -90,8 +90,8 @@ export const ABOUT = {
       },
       {
         degree: "High School (Mathematics & Physics)",
-        period: '2009-2012',
-        school: 'State Engineering University of Armenia',
+        period: '2009 - 2012',
+        school: 'State Engineering University of Armenia | High School',
       },
     ],
   },

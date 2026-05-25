@@ -15,12 +15,12 @@ export const NAV_ITEMS: readonly NavItem[] = [
 export const NAV_CTA: NavItem = { key: 'contact', label: 'Contact', path: '/contact' };
 
 export const BRAND_NAME = BRAND.fullName;
-export const FOOTER_ROLE = 'Software Developer';
+export const FOOTER_ROLE = 'Software Engineer';
 
 export const FOOTER_LINKS = [
-  { key: 'website', href: 'https://github.com/', ariaLabel: 'Website' },
-  { key: 'terminal', href: 'https://github.com/', ariaLabel: 'GitHub' },
-  { key: 'email', href: 'mailto:you@example.com', ariaLabel: 'Email' },
+  { key: 'linkedin', href: 'https://www.linkedin.com/in/armine-israyelyan-193b0b186/', ariaLabel: 'LinkedIn' },
+  { key: 'github', href: 'https://github.com/armineisrayelyan', ariaLabel: 'GitHub' },
+  { key: 'email', href: 'mailto:armine.r.israyelyan@gmail.com', ariaLabel: 'Email' },
 ] as const;
 
 export const MAIN_LAYOUT_CONSTS = {

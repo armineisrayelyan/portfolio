@@ -1,6 +1,6 @@
 import './style.css';
 
-import { GlobalOutlined, MailOutlined, MenuOutlined, CodeOutlined } from '@ant-design/icons';
+import { GithubOutlined, LinkedinOutlined, MailOutlined, MenuOutlined } from '@ant-design/icons';
 import { Button as AntdButton, Drawer, Grid, Layout, Menu, Space, Typography } from 'antd';
 import { PropsWithChildren, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -126,8 +126,8 @@ export function MainLayout({ children }: PropsWithChildren) {
                 aria-label={link.ariaLabel}
                 className="MainLayoutFooterIconBtn"
               >
-                {link.key === 'website' && <GlobalOutlined />}
-                {link.key === 'terminal' && <CodeOutlined />}
+                {link.key === 'linkedin' && <LinkedinOutlined />}
+                {link.key === 'github' && <GithubOutlined />}
                 {link.key === 'email' && <MailOutlined />}
               </a>
             ))}

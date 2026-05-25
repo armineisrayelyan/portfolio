@@ -33,6 +33,7 @@ export const CONTACT_PAGE = {
   location: 'Remote / Worldwide',
   locationLabel: 'LOCATION',
   submitSuccess: 'Your message has been sent successfully!',
+  submitError: 'Failed to send your message. Please try again.',
   form: {
     nameLabel: 'YOUR NAME',
     namePlaceholder: 'John Doe',
@@ -41,5 +42,6 @@ export const CONTACT_PAGE = {
     messageLabel: 'YOUR MESSAGE',
     messagePlaceholder: 'How can I help you build something extraordinary?',
     submitLabel: 'Send Message',
+    sendingLabel: 'Sending…',
   },
 } as const;

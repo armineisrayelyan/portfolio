@@ -26,7 +26,7 @@ export const PROJECTS: readonly Project[] = [
   {
     title: 'Full-stack CMS & authenticated web platform',
     description:
-      'Freelance build: React and Next.js front end, Strapi headless CMS, PostgreSQL, authentication flows, API integration, and responsive UI with a maintainable architecture.',
+      'Freelance build: React and Next.js front end, authentication flows, API integration, and responsive UI with a maintainable architecture.',
     techStack: ['REACT', 'EXPRESS', 'MONGO DB', 'SOCKET.IO'],
     category: 'full-stack',
     featured: true,
@@ -93,26 +93,12 @@ export const PROJECTS: readonly Project[] = [
 
 export const AI_TOOLS: readonly AiTool[] = [
   {
-    id: 'cv-writer',
-    title: 'AI CV Writer',
-    description:
-      'Optimise your professional profile with our proprietary LLM tuned for high-conversion tech roles.',
-    actionLabel: 'LAUNCH TOOL',
-  },
-  {
     id: 'chatbot',
     title: 'AI Chatbot',
     description:
-      'A context-aware assistant capable of answering technical queries about my codebase and architecture.',
+      'A context-aware assistant that answers questions about my experience, projects, and architecture — powered by Gemini and grounded in my own knowledge base.',
     actionLabel: 'START CHAT',
     actionHref: '/ai',
-  },
-  {
-    id: 'cover-letter',
-    title: 'AI Cover Letter',
-    description:
-      'Generate tailored, punchy cover letters that highlight your unique value proposition in seconds.',
-    actionLabel: 'LAUNCH TOOL',
   },
 ] as const;
 
